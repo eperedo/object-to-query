@@ -1,0 +1,19 @@
+{
+	"name": "object-to-query",
+	"version": "1.0.0",
+	"description": "an small library to convert js objects to querystrings",
+	"main": "src/index.js",
+	"scripts": {
+		"test": "node src/index.test.js"
+	},
+	"keywords": [
+		"querystring",
+		"object",
+		"transform"
+	],
+	"author": "Eduardo Peredo Rivero <jrperedo@gmail.com>",
+	"license": "MIT",
+	"dependencies": {
+		"tape": "4.7.0"
+	}
+}

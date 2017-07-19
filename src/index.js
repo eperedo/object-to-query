@@ -1,10 +1,10 @@
-function transform(obj) {
+function transform(obj, notInclude = []) {
 	if (obj && typeof obj === 'object') {
 		const keys = Object.keys(obj);
-		// const keysToConvert = keys.filter((kf) => {
-		//   return notInclude.indexOf(kf) === -1;
-		// })
-		const qs = keys.map((key) => {
+		const keysToConvert = keys.filter((kf) => {
+			return notInclude.indexOf(kf) === -1;
+		})
+		const qs = keysToConvert.map((key) => {
 			const currentKey = obj[key];
 			return `&${key}=${currentKey}`;
 		});

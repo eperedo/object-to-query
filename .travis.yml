@@ -1,13 +1,22 @@
 language: node_js
-node_js:
- - 8.1.4
- - 6.11.1
 cache:
   directories:
-    - "node_modules"
+    - node_modules
+notifications:
+  email: false
+node_js:
+  - '8'
+  - '7'
+  - '6'
 addons:
   code_climate:
     repo_token: 3b3d167db63a543859a8b0b68698cfdc1dd39e8afe9341f2b66485580e21b8cb
+before_script:
+  - npm prune
 after_success:
-  npm install -g codeclimate-test-reporter
-  codeclimate-test-reporter < coverage/lcov.info
+  - npm run semantic-release
+  - npm install -g codeclimate-test-reporter
+  - codeclimate-test-reporter < coverage/lcov.info
+branches:
+  except:
+    - /^v\d+\.\d+\.\d+$/

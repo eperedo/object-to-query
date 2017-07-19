@@ -4,6 +4,7 @@
 	"description": "an small library to convert js objects to querystrings",
 	"main": "src/index.js",
 	"scripts": {
+		"pretest": "eslint src/**/*.js",
 		"test": "node src/index.test.js",
 		"posttest": "istanbul cover src/index.test.js",
 		"semantic-release": "semantic-release pre && npm publish && semantic-release post"
@@ -17,9 +18,12 @@
 	"license": "MIT",
 	"dependencies": {},
 	"devDependencies": {
+		"eslint": "3.19.0",
+		"eslint-config-airbnb-base": "11.2.0",
+		"eslint-plugin-import": "2.7.0",
 		"istanbul": "0.4.5",
-		"tape": "4.7.0",
-		"semantic-release": "6.3.6"
+		"semantic-release": "6.3.6",
+		"tape": "4.7.0"
 	},
 	"repository": {
 		"type": "git",

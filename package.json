@@ -1,11 +1,12 @@
 {
 	"name": "object-to-query",
-	"version": "1.0.0",
+	"version": "0.0.0-development",
 	"description": "an small library to convert js objects to querystrings",
 	"main": "src/index.js",
 	"scripts": {
 		"test": "node src/index.test.js",
-		"posttest": "istanbul cover src/index.test.js"
+		"posttest": "istanbul cover src/index.test.js",
+		"semantic-release": "semantic-release pre && npm publish && semantic-release post"
 	},
 	"keywords": [
 		"querystring",
@@ -17,6 +18,11 @@
 	"dependencies": {},
 	"devDependencies": {
 		"istanbul": "0.4.5",
-		"tape": "4.7.0"
+		"tape": "4.7.0",
+		"semantic-release": "6.3.6"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/eperedo/object-to-query.git"
 	}
 }

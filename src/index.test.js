@@ -2,36 +2,36 @@ const test = require('tape');
 const transform = require('./index');
 
 test('should return an empty string if parameter is not an object', (assert) => {
-
 	const resultWithNull = transform(null);
 	const resultWithEmpty = transform('');
-	const resultWithUndefined = transform('');
+	const resultWithUndefined = transform(undefined);
 
-	assert.equal(resultWithNull, '', 'must return an empty string');
-	assert.equal(resultWithEmpty, '', 'must return an empty string');
-	assert.equal(resultWithUndefined, '', 'must return an empty string');
+	const message = 'must return an empty string';
+	const expect = '';
+
+	assert.equal(resultWithNull, expect, message);
+	assert.equal(resultWithEmpty, expect, message);
+	assert.equal(resultWithUndefined, expect, message);
 
 	assert.end();
-
 });
 
 test('should return a query string', (assert) => {
-
 	const objectTest = {
 		id: 1,
 		name: 'Eduardo',
 	};
 
-	const result = transform(objectTest);
+	const actual = transform(objectTest);
+	const expect = '&id=1&name=Eduardo';
+	const message = 'should generate a query string with 2 keys';
 
-	assert.equal(result, '&id=1&name=Eduardo', 'should generate a query string with 2 keys');
+	assert.equal(actual, expect, message);
 
 	assert.end();
-
 });
 
 test('should return a query string without the marked as not included', (assert) => {
-
 	const objectTest = {
 		id: 1,
 		name: 'Eduardo',
@@ -46,11 +46,9 @@ test('should return a query string without the marked as not included', (assert)
 	assert.equal(actual, expect, message);
 
 	assert.end();
-
 });
 
 test('should include the question mark in the first key', (assert) => {
-
 	const objectTest = {
 		id: 1,
 		name: 'Eduardo',
@@ -64,6 +62,4 @@ test('should include the question mark in the first key', (assert) => {
 	assert.equal(actual, expect, message);
 
 	assert.end();
-
-
 });

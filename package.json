@@ -4,7 +4,8 @@
 	"description": "an small library to convert js objects to querystrings",
 	"main": "src/index.js",
 	"scripts": {
-		"test": "node src/index.test.js"
+		"test": "node src/index.test.js",
+		"posttest": "istanbul cover src/index.test.js"
 	},
 	"keywords": [
 		"querystring",
@@ -13,7 +14,9 @@
 	],
 	"author": "Eduardo Peredo Rivero <jrperedo@gmail.com>",
 	"license": "MIT",
-	"dependencies": {
+	"dependencies": {},
+	"devDependencies": {
+		"istanbul": "0.4.5",
 		"tape": "4.7.0"
 	}
 }

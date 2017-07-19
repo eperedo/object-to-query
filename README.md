@@ -60,8 +60,12 @@ an small library to convert js objects to querystrings
 
 ### Testing
 
-1. We are using tape because is small and awesome, only run the default test command
+1. We are using [tape](https://github.com/substack/tape) because is small and awesome, only run the default test command
 
 		npm test
 
 2. If everything looks green you are fine.
+
+### Code Coverage
+
+1. [Istanbul](https://github.com/gotwarlost/istanbul)

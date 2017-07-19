@@ -48,3 +48,22 @@ test('should return a query string without the marked as not included', (assert)
 	assert.end();
 
 });
+
+test('should include the question mark in the first key', (assert) => {
+
+	const objectTest = {
+		id: 1,
+		name: 'Eduardo',
+		age: 30,
+	};
+
+	const actual = transform(objectTest, [], true);
+	const message = 'query string must contain the question mark at the start';
+	const expect = '?id=1&name=Eduardo&age=30';
+
+	assert.equal(actual, expect, message);
+
+	assert.end();
+
+
+});
